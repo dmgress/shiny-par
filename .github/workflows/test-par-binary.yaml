@@ -12,4 +12,6 @@ jobs:
       - name: Install par command
         run: sudo apt install par
       - name: Run test-par
-        run: sh test-par par
+        run: |
+          chmod +x ./test-par
+          ./test-par par
