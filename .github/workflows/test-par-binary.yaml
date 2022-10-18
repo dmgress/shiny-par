@@ -6,7 +6,7 @@ on:
 jobs:
   test_against_binary:
     name: Run test-par against par binary
-    runs-on: ubuntu-latest
+    runs-on: 	ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
       - name: Install par command
