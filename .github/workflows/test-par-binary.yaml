@@ -10,6 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install par command
-        run: apt install par
+        run: sudo apt install par
       - name: Run test-par
         run: sh test-par par
