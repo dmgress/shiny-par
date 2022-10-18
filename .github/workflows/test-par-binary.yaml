@@ -14,4 +14,4 @@ jobs:
       - name: Run test-par
         run: |
           chmod +x ./test-par
-          ./test-par par
+          ./test-par $(which par)
