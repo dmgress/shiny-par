@@ -1,0 +1,15 @@
+on:
+  push:
+    paths-ignore:
+      - README.md
+      - LICENSE
+jobs:
+  test_against_binary:
+    name: Run test-par against par binary
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install par command
+        run: apt install par
+      - name: Run test-par
+        run: sh test-par par
