@@ -10,7 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install par command
-        run: sudo apt install par
+        run: |
+          sudo apt-get update
+          sudo apt-get install locales par
       - name: Run test-par
         run: |
           chmod +x ./test-par
