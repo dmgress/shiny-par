@@ -1,0 +1,20 @@
+on:
+  push:
+    paths-ignore:
+      - README.md
+      - LICENSE
+jobs:
+  test_against_binary:
+    name: Run test-par against par binary
+    runs-on: 	ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install par command
+        run: |
+          sudo apt-get update
+          sudo apt-get install locales par
+      - name: Run test-par
+        run: |
+          par version
+          chmod +x ./test-par
+          ./test-par $(which par)
