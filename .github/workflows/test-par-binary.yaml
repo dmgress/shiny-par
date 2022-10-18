@@ -15,5 +15,6 @@ jobs:
           sudo apt-get install locales par
       - name: Run test-par
         run: |
+          par version
           chmod +x ./test-par
           ./test-par $(which par)
